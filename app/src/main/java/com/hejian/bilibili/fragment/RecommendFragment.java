@@ -22,9 +22,9 @@ import butterknife.InjectView;
 public class RecommendFragment extends BaseFragment {
 
 
-    @InjectView(R.id.tablayout)
+    @InjectView(R.id.tablayout_recommend)
     TabLayout tablayout;
-    @InjectView(R.id.view_pager)
+    @InjectView(R.id.view_pager_recommend)
     ViewPager viewPager;
     private List<BaseFragment> fragments;
 
@@ -38,7 +38,7 @@ public class RecommendFragment extends BaseFragment {
     @Override
     public void initData() {
         initFragments();
-        MyRecommendAdapter adapter = new MyRecommendAdapter(getFragmentManager(), fragments);
+        MyRecommendAdapter adapter = new MyRecommendAdapter(getChildFragmentManager(), fragments);
         viewPager.setAdapter(adapter);
 
         //关联viewpager

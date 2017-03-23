@@ -1,0 +1,11 @@
+<TextView
+    android:background="@drawable/ic_video_entry_text"
+    android:id="@+id/tv_tag"
+    android:layout_width="80dp"
+    android:layout_height="50dp"
+    android:gravity="center"
+    android:text="大暴走"
+    android:lines="2"
+    android:textSize="13sp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
+

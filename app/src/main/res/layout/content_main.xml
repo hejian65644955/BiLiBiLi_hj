@@ -10,66 +10,84 @@
     tools:context="com.hejian.bilibili.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <LinearLayout
-        android:background="#fb7299"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/iv_click"
-            android:src="@drawable/ic_drawer_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
-        <ImageView
-            android:src="@drawable/bili_default_avatar"
-            android:layout_marginLeft="10dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
-
-        <TextView
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="何健"/>
+            android:background="#fb7299"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:padding="10dp"
-            android:id="@+id/iv_game"
-            android:src="@drawable/ic_menu_top_game_center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:padding="10dp"
-            android:src="@drawable/ic_toolbar_menu_download"
-            android:id="@+id/iv_download"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:padding="10dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/live_home_search"
-            android:id="@+id/iv_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_click"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_drawer_home" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/bili_default_avatar" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:text="何健" />
+
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_marginLeft="70dp"
+                android:id="@+id/iv_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_menu_top_game_center" />
+
+            <ImageView
+                android:id="@+id/iv_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_toolbar_menu_download" />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:src="@drawable/live_home_search" />
+        </LinearLayout>
+
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
         style="@style/MyCustomTabLayout"
-        android:background="#fb7299"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:background="#fb7299" />
+
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 
 </LinearLayout>

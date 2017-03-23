@@ -1,10 +1,8 @@
 package com.hejian.bilibili.fragment.recommend;
 
-import android.graphics.Color;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 
+import com.hejian.bilibili.R;
 import com.hejian.bilibili.fragment.BaseFragment;
 
 /**
@@ -12,19 +10,14 @@ import com.hejian.bilibili.fragment.BaseFragment;
  */
 
 public class DynamicFragment extends BaseFragment {
-    TextView textView;
     @Override
     public View initView() {
-        textView = new TextView(mContext);
-        textView.setTextColor(Color.RED);
-        textView.setTextSize(20);
-        textView.setGravity(Gravity.CENTER);
-        return textView;
+        View view = View.inflate(mContext, R.layout.dynamic_fragment, null);
+        return view;
     }
 
     @Override
     public void initData() {
-        textView.setText("我是动态页面");
 
     }
 }

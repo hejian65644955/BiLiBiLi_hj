@@ -1,16 +1,19 @@
 package com.hejian.bilibili;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.hejian.bilibili.adapter.MyViewPagerAdapter;
 import com.hejian.bilibili.fragment.BaseFragment;
@@ -37,7 +40,14 @@ public class MainActivity extends AppCompatActivity
     ViewPager viewPager;
     @InjectView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
+    //@InjectView(R.id.toolBar)
+    Toolbar toolBar1;
+    //@InjectView(R.id.appbar)
+    AppBarLayout appbar;
+    @InjectView(R.id.ll_click)
+    LinearLayout llClick;
     private List<BaseFragment> fragments;
+    private boolean isOpen = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +58,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ivClick.setOnClickListener(new View.OnClickListener() {
+        llClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
-
         initData();
     }
 
@@ -76,7 +85,6 @@ public class MainActivity extends AppCompatActivity
         fragments.add(new ToThemFragment());
         fragments.add(new PartitionFragment());
         fragments.add(new DiscoverFragment());
-
     }
 
     @Override
@@ -136,4 +144,66 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+ /*   private int startY;
+    private int startX;
+    private boolean isScrollY;
+    private boolean isFirst;*/
+
+   /* //tollBar 回弹效果
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        int eventY = (int) ev.getY();
+        int eventX = (int) ev.getX();
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                startY = eventY;
+                startX = eventX;
+                isFirst = true;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                if (isFirst) {
+                    if (Math.abs(eventX - startX) > Math.abs(eventY - startY) && Math.abs(eventX - startX) > toolBar1.getHeight() * 0.30) {
+                        isScrollY = false;
+                        isFirst = false;
+                        appbar.setExpanded(isOpen);
+                    } else if (Math.abs(eventY - startY) > Math.abs(eventX - startX) && Math.abs(eventY - startY) > toolBar1.getHeight() * 0.30) {
+                        isScrollY = true;
+                        isFirst = false;
+                    }
+                }
+                if (isOpen) {
+                    if (startY < eventY) {
+                        startY = eventY;
+                    }
+                } else {
+                    if (startY > eventY) {
+                        startY = eventY;
+                    }
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                if (isScrollY) {
+                    if (isOpen) {
+                        if (startY - eventY > toolBar1.getHeight() * 0.36) {
+                            appbar.setExpanded(false);
+                            isOpen = false;
+                        } else {
+                            appbar.setExpanded(true);
+                            isOpen = true;
+                        }
+                    } else {
+                        if (eventY - startY > toolBar1.getHeight() * 0.36) {
+                            appbar.setExpanded(true);
+                            isOpen = true;
+                        } else {
+                            appbar.setExpanded(false);
+                            isOpen = false;
+                        }
+                    }
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+*/
 }

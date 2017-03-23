@@ -137,8 +137,6 @@ public class LiveRecycleAdapter extends RecyclerView.Adapter {
             case DRAW:
                 drawViewHolder = (DrawViewHolder) holder;
                 getDataFromNet(Utils.DRAW_DATA);
-
-
                 break;
         }
     }

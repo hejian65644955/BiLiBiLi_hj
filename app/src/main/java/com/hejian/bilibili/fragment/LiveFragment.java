@@ -67,6 +67,9 @@ public class LiveFragment extends BaseFragment {
     private void processData(String json) {
         homeBean = JSON.parseObject(json, HomeBean.class);
         LiveRecycleAdapter adapter = new LiveRecycleAdapter(homeBean,mContext);
+        if(recyclerviewLive==null && homeBean.getData().getBanner().size()>0){
+            return;
+        }
         recyclerviewLive.setAdapter(adapter);
        // recyclerviewLive.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
         GridLayoutManager manager = new GridLayoutManager(mContext, 1);
@@ -85,4 +88,7 @@ public class LiveFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
+
+
+
 }

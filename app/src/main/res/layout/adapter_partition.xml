@@ -37,6 +37,8 @@
             android:id="@+id/btn_lookin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#33000000"
+            android:textColor="#ffffff"
             android:text="进去看看"/>
 
     </RelativeLayout>
@@ -54,14 +56,16 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:padding="5dp"
                 android:id="@+id/iv_partition1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
 
             <TextView
                 android:id="@+id/tv_name1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:lines="2"
                 android:text="【伏地魔x林黛玉】手书--心术"/>
 
             <LinearLayout
@@ -74,6 +78,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/tv_see1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -81,11 +86,12 @@
 
 
                 <ImageView
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:layout_marginRight="5dp"
                     android:id="@+id/tv_collect1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -105,14 +111,16 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:padding="5dp"
                 android:id="@+id/iv_partition2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
 
             <TextView
                 android:id="@+id/tv_name2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:lines="2"
                 android:text="【伏地魔x林黛玉】手书--心术"/>
 
             <LinearLayout
@@ -125,6 +133,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/tv_see2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -132,11 +141,12 @@
 
 
                 <ImageView
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:layout_marginRight="5dp"
                     android:id="@+id/tv_collect2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -163,14 +173,16 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:padding="5dp"
                 android:id="@+id/iv_partition3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
 
             <TextView
                 android:id="@+id/tv_name3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:lines="2"
                 android:text="【伏地魔x林黛玉】手书--心术"/>
 
             <LinearLayout
@@ -183,6 +195,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/tv_see3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -190,11 +203,12 @@
 
 
                 <ImageView
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:layout_marginRight="5dp"
                     android:id="@+id/tv_collect3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -214,14 +228,16 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:padding="5dp"
                 android:id="@+id/iv_partition4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
 
             <TextView
                 android:id="@+id/tv_name4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:lines="2"
                 android:text="【伏地魔x林黛玉】手书--心术"/>
 
             <LinearLayout
@@ -234,6 +250,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/tv_see4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -241,11 +258,12 @@
 
 
                 <ImageView
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:layout_marginRight="5dp"
                     android:id="@+id/tv_collect4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -262,17 +280,21 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:textColor="#33000000"
+            android:background="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="更多动画"/>
 
         <ImageView
+            android:layout_centerVertical="true"
             android:id="@+id/iv_refresh"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/iv_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -281,8 +303,6 @@
     </RelativeLayout>
 
     </LinearLayout>
-
-
 
     <LinearLayout
         android:id="@+id/ll_one"

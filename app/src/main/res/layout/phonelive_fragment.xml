@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_weight="2"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/tv_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#88000000"
+            android:padding="8dp"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:text="全部"/>
+
+        <TextView
+            android:id="@+id/tv_trip"
+            android:layout_weight="2"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/tv_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#88000000"
+            android:padding="8dp"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:text="户外旅行"/>
+
+        <TextView
+            android:id="@+id/foreign_stu"
+            android:layout_weight="2"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/tv_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#88000000"
+            android:padding="8dp"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:text="海外留学"/>
+
+        <TextView
+            android:id="@+id/tv_show"
+            android:layout_weight="2"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/tv_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#88000000"
+            android:padding="8dp"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:text="才艺表演"/>
+
+        <TextView
+            android:id="@+id/tv_photos"
+            android:layout_weight="2"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/tv_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#88000000"
+            android:padding="8dp"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:text="个人自拍"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/iv_phonelive_up"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_arrow_down_gray_round"
+            />
+
+        <ImageView
+
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:id="@+id/iv_phonelive_down"
+            android:layout_marginLeft="5dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_arrow_up_gray_round"/>
+
+    </LinearLayout>
+
+    <View
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="#22000000"/>
+
+    <LinearLayout
+        android:id="@+id/ll_botton"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:id="@+id/btn_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="推荐"/>
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:id="@+id/btn_most_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最热"/>
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:id="@+id/btn_most_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最新"/>
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fl_botton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_click"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="#22000000"
+            />
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

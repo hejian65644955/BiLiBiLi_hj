@@ -6,8 +6,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
@@ -43,6 +45,7 @@ public class LiveRecycleAdapter extends RecyclerView.Adapter {
     private final LayoutInflater inflater;
     private DrawBean drawBean;
     private DrawViewHolder drawViewHolder;
+    private MyDrawGridViewAdapter adapter;
 
 
     public LiveRecycleAdapter(HomeBean datas, Context mContext) {
@@ -88,9 +91,14 @@ public class LiveRecycleAdapter extends RecyclerView.Adapter {
         }
 
         public void setData(List<DrawBean.DataBean> data) {
-            MyDrawGridViewAdapter adapter = new MyDrawGridViewAdapter(data, mContext);
+            adapter = new MyDrawGridViewAdapter(data, mContext);
             gvDraw.setAdapter(adapter);
-
+            gvDraw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Toast.makeText(mContext, "position=="+position, Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 

@@ -38,12 +38,12 @@ public class MyDrawGridViewAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return datas.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class MyDrawGridViewAdapter extends BaseAdapter {
         Glide.with(mContext)
                 .load(datas.get(position).getCover().getSrc())
                 .into(viewHolder.ivDraw);
-        viewHolder.tvDraw.setText(datas.get(position).getTitle());
+       viewHolder.tvDraw.setText(datas.get(position).getTitle());
         viewHolder.tvName.setText(datas.get(position).getOwner().getName());
         viewHolder.tvOnline.setText(datas.get(position).getOnline()+"");
         return convertView;

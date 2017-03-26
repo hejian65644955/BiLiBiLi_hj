@@ -1,13 +1,14 @@
 package com.hejian.bilibili.fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.hejian.bilibili.R;
+import com.hejian.bilibili.activity.RecommendLiveActivity;
 import com.hejian.bilibili.adapter.PartitionAdapter;
 import com.hejian.bilibili.adapter.PartitionListAdapter;
 import com.hejian.bilibili.bean.PartitionBean;
@@ -57,7 +58,13 @@ public class PartitionFragment extends BaseFragment {
         gvPartition.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(mContext, "position==" + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, "position==" + position, Toast.LENGTH_SHORT).show();
+                switch (position) {
+                    case 0:
+                        Intent intent = new Intent(mContext, RecommendLiveActivity.class);
+                        mContext.startActivity(intent);
+                        break;
+                }
             }
         });
 
@@ -88,10 +95,12 @@ public class PartitionFragment extends BaseFragment {
         PartitionBean partitionBean = JSON.parseObject(json, PartitionBean.class);
 
         PartitionListAdapter adapter = new PartitionListAdapter(partitionBean.getData(), mContext);
+        if (lvPartition != null && adapter!=null) {
 
-        lvPartition.setAdapter(adapter);
+            lvPartition.setAdapter(adapter);
 
-        lvPartition.addHeaderView(gvPartition);
+            lvPartition.addHeaderView(gvPartition);
+        }
     }
 
     @Override

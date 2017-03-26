@@ -1,5 +1,6 @@
 package com.hejian.bilibili;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
@@ -22,6 +23,7 @@ import com.hejian.bilibili.fragment.LiveFragment;
 import com.hejian.bilibili.fragment.PartitionFragment;
 import com.hejian.bilibili.fragment.RecommendFragment;
 import com.hejian.bilibili.fragment.ToThemFragment;
+import com.hejian.bilibili.headactivity.MemberActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity
     private List<BaseFragment> fragments;
     private boolean isOpen = true;
 
+    private String[] titles = new String[]{"直播", "推荐","追番","分区","发现"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,12 +74,13 @@ public class MainActivity extends AppCompatActivity
     private void initData() {
         initFragment();
         //设置适配器
-        MyViewPagerAdapter adapter = new MyViewPagerAdapter(getSupportFragmentManager(), fragments);
+        MyViewPagerAdapter adapter = new MyViewPagerAdapter(getSupportFragmentManager(), fragments,titles);
         viewPager.setAdapter(adapter);
 
         //关联ViewPager
         tablayout.setupWithViewPager(viewPager);
         tablayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        tablayout.setTabsFromPagerAdapter(adapter);
     }
 
     private void initFragment() {
@@ -125,17 +130,29 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.home_main) {
+        if (id == R.id.home_main) {//首页
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_gallery) {//我的大会员
+            Intent intent = new Intent(MainActivity.this,MemberActivity.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_slideshow) {//会员积分
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_manage) {//离线缓存
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_share) {//主题选择
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_send) {//设置与帮助
+
+        }else if (id == R.id.see_later) {//稍后再看
+
+        } else if (id == R.id.my_collect) {//我的收藏
+
+        } else if (id == R.id.nav_history) {//历史纪录
+
+        } else if (id == R.id.my_attention) {//我的关注
+
+        }else if (id == R.id.nav_purse) {//B币钱包
 
         }
 

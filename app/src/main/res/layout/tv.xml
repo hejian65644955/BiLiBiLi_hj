@@ -1,11 +1,13 @@
 <TextView
-    android:background="@drawable/ic_video_entry_text"
+    android:background="@drawable/tv_background"
     android:id="@+id/tv_tag"
-    android:layout_width="80dp"
-    android:layout_height="50dp"
+    android:layout_width="40dp"
+    android:layout_height="18dp"
     android:gravity="center"
     android:text="大暴走"
+    android:padding="8dp"
     android:lines="2"
+    android:textColor="#44000000"
     android:textSize="13sp"
     xmlns:android="http://schemas.android.com/apk/res/android" />
 

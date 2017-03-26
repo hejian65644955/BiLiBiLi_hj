@@ -9,9 +9,9 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -114,367 +114,338 @@
                 android:background="@drawable/bangumi_home_login_guide" />
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <!--top-->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ImageView
                         android:id="@+id/iv_tuijian"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@id/iv_tuijian"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="番剧推荐"/>
+                        android:text="番剧推荐" />
 
                     <ImageView
-                        android:src="@drawable/ic_gray_arrow_right"
-                        android:layout_marginRight="20dp"
                         android:id="@+id/iv_more"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/ic_gray_arrow_right" />
 
                     <TextView
-                        android:layout_toRightOf="@id/iv_more"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="更多番剧"/>
+                        android:layout_toRightOf="@id/iv_more"
+                        android:text="更多番剧" />
                 </RelativeLayout>
                 <!--image1-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                     <!--image1-1-->
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <FrameLayout
-                            android:background="@drawable/ic_empty_cute_girl_box"
+                        <ImageView
+                            android:src="@drawable/ic_empty_cute_girl_box"
                             android:id="@+id/fl_image1"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_gravity="bottom"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="17万人追番"/>
-
-                        </FrameLayout>
+                            android:layout_height="wrap_content"
+                             />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="心灵的声音"/>
+                            android:text="心灵的声音" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="更新至62话"/>
+                            android:text="更新至62话" />
 
                     </LinearLayout>
 
                     <!--image1-2-->
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <FrameLayout
-                            android:background="@drawable/ic_empty_cute_girl_box"
+                        <ImageView
+                            android:src="@drawable/ic_empty_cute_girl_box"
                             android:id="@+id/fl_image2"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                           >
 
-                            <TextView
-                                android:layout_gravity="bottom"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="28.9万人追番"/>
-
-                        </FrameLayout>
+                        </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="CHAOs;CHIlD"/>
+                            android:text="CHAOs;CHIlD" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="更新至11话"/>
+                            android:text="更新至11话" />
 
                     </LinearLayout>
 
                     <!--image1-3-->
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <FrameLayout
-                            android:background="@drawable/ic_empty_cute_girl_box"
+                        <ImageView
+                            android:src="@drawable/ic_empty_cute_girl_box"
                             android:id="@+id/fl_image3"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            >
 
-                            <TextView
-                                android:layout_gravity="bottom"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="179.4万人追番"/>
-
-                        </FrameLayout>
+                        </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="小林家的龙女仆"/>
+                            android:text="小林家的龙女仆" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="更新至11话"/>
+                            android:text="更新至11话" />
 
                     </LinearLayout>
-
 
 
                 </LinearLayout>
 
                 <!--image2-->
                 <LinearLayout
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
 
                     <ImageView
-                        android:background="@drawable/ic_group_header_bg"
+                        android:src="@drawable/ic_group_header_bg"
                         android:id="@+id/iv_bigimage"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="梦之祭！研究室21"/>
+                        android:text="梦之祭！研究室21" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="第二次公开"
-                        android:textColor="#55000000"/>
+                        android:textColor="#55000000" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="！@！@#￥%*"
-                        android:textColor="#55000000"/>
+                        android:textColor="#55000000" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="救你最跳"
-                        android:textColor="#55000000"/>
+                        android:textColor="#55000000" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <!--top-->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <ImageView
                         android:id="@+id/iv_tuijian1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@id/iv_tuijian1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="番剧推荐"/>
+                        android:text="番剧推荐" />
 
                     <ImageView
-                        android:src="@drawable/ic_gray_arrow_right"
-                        android:layout_marginRight="20dp"
                         android:id="@+id/iv_more1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/ic_gray_arrow_right" />
 
                     <TextView
-                        android:layout_toRightOf="@id/iv_more1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="更多番剧"/>
+                        android:layout_toRightOf="@id/iv_more1"
+                        android:text="更多番剧" />
                 </RelativeLayout>
                 <!--image1-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                     <!--image1-1-->
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <FrameLayout
-                            android:background="@drawable/ic_empty_cute_girl_box"
+                        <ImageView
+                            android:src="@drawable/ic_empty_cute_girl_box"
                             android:id="@+id/fl_image11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                            <TextView
-                                android:layout_gravity="bottom"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="17万人追番"/>
-
-                        </FrameLayout>
+                        </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="心灵的声音"/>
+                            android:text="心灵的声音" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="更新至62话"/>
+                            android:text="更新至62话" />
 
                     </LinearLayout>
 
                     <!--image1-2-->
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <FrameLayout
-                            android:background="@drawable/ic_empty_cute_girl_box"
+                        <ImageView
+                            android:src="@drawable/ic_empty_cute_girl_box"
                             android:id="@+id/fl_image22"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                           >
 
-                            <TextView
-                                android:layout_gravity="bottom"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="28.9万人追番"/>
-
-                        </FrameLayout>
+                        </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="CHAOs;CHIlD"/>
+                            android:text="CHAOs;CHIlD" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="更新至11话"/>
+                            android:text="更新至11话" />
 
                     </LinearLayout>
 
                     <!--image1-3-->
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <FrameLayout
-                            android:background="@drawable/ic_empty_cute_girl_box"
+                        <ImageView
+                            android:src="@drawable/ic_empty_cute_girl_box"
                             android:id="@+id/fl_image33"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            >
 
-                            <TextView
-                                android:layout_gravity="bottom"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="179.4万人追番"/>
-
-                        </FrameLayout>
+                        </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="小林家的龙女仆"/>
+                            android:text="小林家的龙女仆" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="更新至11话"/>
+                            android:text="更新至11话" />
 
                     </LinearLayout>
-
 
 
                 </LinearLayout>
 
                 <!--image2-->
                 <LinearLayout
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
 
                     <ImageView
-                        android:background="@drawable/ic_group_header_bg"
+                        android:src="@drawable/ic_group_header_bg"
                         android:id="@+id/iv_bigimage1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="梦之祭！研究室21"/>
+                        android:text="梦之祭！研究室21" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="第二次公开"
-                        android:textColor="#55000000"/>
+                        android:textColor="#55000000" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="！@！@#￥%*"
-                        android:textColor="#55000000"/>
+                        android:textColor="#55000000" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="救你最跳"
-                        android:textColor="#55000000"/>
+                        android:textColor="#55000000" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -482,10 +453,6 @@
 
         </LinearLayout>
     </ScrollView>
-
-
-
-
 
 
 </LinearLayout>

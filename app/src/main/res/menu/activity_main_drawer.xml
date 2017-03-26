@@ -24,23 +24,23 @@
     </group>
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_share1"
+            android:id="@+id/see_later"
             android:icon="@drawable/ic_view_later_24dp"
             android:title="稍后再看" />
         <item
-            android:id="@+id/nav_send2"
+            android:id="@+id/my_collect"
             android:icon="@drawable/ic_star_black_24dp"
             android:title="我的收藏" />
         <item
-            android:id="@+id/nav_send3"
+            android:id="@+id/nav_history"
             android:icon="@drawable/ic_history_black_24dp"
             android:title="历史纪录" />
         <item
-            android:id="@+id/nav_send4"
+            android:id="@+id/my_attention"
             android:icon="@drawable/ic_people_black_24dp"
             android:title="我的关注" />
         <item
-            android:id="@+id/nav_send5"
+            android:id="@+id/nav_purse"
             android:icon="@drawable/ic_account_balance_wallet_black_24dp"
             android:title="B币钱包" />
     </group>

@@ -8,13 +8,15 @@ import android.view.View;
 
 import com.alibaba.fastjson.JSON;
 import com.hejian.bilibili.R;
-import com.hejian.bilibili.activity.GoodSInfoActivity;
+import com.hejian.bilibili.activity.GoodsInfoActivity;
 import com.hejian.bilibili.adapter.SynthesizeAdapter;
 import com.hejian.bilibili.bean.SynthesizeBean;
 import com.hejian.bilibili.fragment.BaseFragment;
 import com.hejian.bilibili.utils.Utils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -76,11 +78,13 @@ public class SynthesizeFragment extends BaseFragment {
     private void initListener() {
         adapter.setOnItemClickListener(new SynthesizeAdapter.OnItemClickListener() {
             @Override
-            public void onItemClickListener(View view, int position) {
+            public void onItemClickListener(View view, int position, List<SynthesizeBean.DataBean> datas) {
                // Toast.makeText(mContext, "position===" + position, Toast.LENGTH_SHORT).show();
-                if(synthesizeBean.getData().size()>0){
-                    Intent intent = new Intent(mContext, GoodSInfoActivity.class);
-                    intent.putExtra("synthesizeBean",synthesizeBean);
+                Log.e("TAG", "2222222222222222222"+datas.get(position));
+               if(datas.size()>0){
+                    SynthesizeBean.DataBean dataBean = datas.get(position);
+                    Intent intent = new Intent(mContext, GoodsInfoActivity.class);
+                    intent.putExtra("datas",dataBean);
                     intent.putExtra("position",position);
                     startActivity(intent);
                 }

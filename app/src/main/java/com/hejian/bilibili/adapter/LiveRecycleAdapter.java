@@ -104,6 +104,7 @@ public class LiveRecycleAdapter extends RecyclerView.Adapter {
                    Intent intent = new Intent(mContext,PlayerActivity.class);
                     intent.putExtra("position",position);
                     //intent.putExtra("Bean",drawBean);
+                    intent.putExtra("playUrl",data.get(position).getPlayurl());
                     mContext.startActivity(intent);
                 }
             });

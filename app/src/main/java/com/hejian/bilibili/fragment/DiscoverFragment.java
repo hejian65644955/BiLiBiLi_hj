@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.hejian.bilibili.R;
-import com.hejian.bilibili.activity.GoodSInfoActivity;
+import com.hejian.bilibili.activity.ShoppingCartActivity;
 import com.hejian.bilibili.activity.TopicCenterActivity;
 import com.hejian.bilibili.bean.DiscoverBean;
 import com.hejian.bilibili.utils.Utils;
@@ -184,7 +184,7 @@ public class DiscoverFragment extends BaseFragment {
             case R.id.action_center:
                 break;
             case R.id.ic_quanzi_layout:
-                startActivity(new Intent(mContext, GoodSInfoActivity.class));
+                startActivity(new Intent(mContext, ShoppingCartActivity.class));
                 break;
         }
     }

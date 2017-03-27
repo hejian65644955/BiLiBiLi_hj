@@ -1,1 +1,1 @@
-include ':app', ':MaterialRefresh_library', ':gradationscroll', ':jcvideoplayer-lib'
+include ':app', ':MaterialRefresh_library', ':gradationscroll', ':jcvideoplayer-lib', ':libzxing'

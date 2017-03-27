@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.hejian.bilibili.adapter.MyViewPagerAdapter;
 import com.hejian.bilibili.fragment.BaseFragment;
@@ -24,6 +25,7 @@ import com.hejian.bilibili.fragment.PartitionFragment;
 import com.hejian.bilibili.fragment.RecommendFragment;
 import com.hejian.bilibili.fragment.ToThemFragment;
 import com.hejian.bilibili.headactivity.MemberActivity;
+import com.xys.libzxing.zxing.activity.CaptureActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,10 +50,12 @@ public class MainActivity extends AppCompatActivity
     AppBarLayout appbar;
     @InjectView(R.id.ll_click)
     LinearLayout llClick;
+    @InjectView(R.id.iv_saosao)
+    ImageView ivSaosao;
     private List<BaseFragment> fragments;
     private boolean isOpen = true;
 
-    private String[] titles = new String[]{"直播", "推荐","追番","分区","发现"};
+    private String[] titles = new String[]{"直播", "推荐", "追番", "分区", "发现"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +72,21 @@ public class MainActivity extends AppCompatActivity
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
+        ivSaosao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openCameraIntent = new Intent(MainActivity.this, CaptureActivity.class);
+                startActivityForResult(openCameraIntent, 0);
+            }
+        });
         initData();
     }
 
     private void initData() {
         initFragment();
         //设置适配器
-        MyViewPagerAdapter adapter = new MyViewPagerAdapter(getSupportFragmentManager(), fragments,titles);
+        MyViewPagerAdapter adapter = new MyViewPagerAdapter(getSupportFragmentManager(), fragments, titles);
         viewPager.setAdapter(adapter);
 
         //关联ViewPager
@@ -133,7 +145,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.home_main) {//首页
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {//我的大会员
-            Intent intent = new Intent(MainActivity.this,MemberActivity.class);
+            Intent intent = new Intent(MainActivity.this, MemberActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {//会员积分
@@ -144,7 +156,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {//设置与帮助
 
-        }else if (id == R.id.see_later) {//稍后再看
+        } else if (id == R.id.see_later) {//稍后再看
 
         } else if (id == R.id.my_collect) {//我的收藏
 
@@ -152,7 +164,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.my_attention) {//我的关注
 
-        }else if (id == R.id.nav_purse) {//B币钱包
+        } else if (id == R.id.nav_purse) {//B币钱包
 
         }
 
@@ -161,7 +173,17 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
- /*   private int startY;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 0 && resultCode ==RESULT_OK){
+            //String result = data.getExtras().getString("result");
+            Toast.makeText(MainActivity.this, ""+"未实现", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    /*   private int startY;
     private int startX;
     private boolean isScrollY;
     private boolean isFirst;*/

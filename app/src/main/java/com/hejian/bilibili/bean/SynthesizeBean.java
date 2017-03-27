@@ -19,6 +19,11 @@ public class SynthesizeBean implements Serializable {
     private String message;
     private List<DataBean> data;
 
+
+
+
+
+
     public int getCode() {
         return code;
     }
@@ -42,6 +47,7 @@ public class SynthesizeBean implements Serializable {
     public void setData(List<DataBean> data) {
         this.data = data;
     }
+
 
     public static class DataBean implements Serializable {
         /**

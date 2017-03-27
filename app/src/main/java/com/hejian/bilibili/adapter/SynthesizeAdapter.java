@@ -68,7 +68,7 @@ public class SynthesizeAdapter extends RecyclerView.Adapter<SynthesizeAdapter.Vi
                 @Override
                 public void onClick(View v) {
                     if(itemClickListener!=null){
-                        itemClickListener.onItemClickListener(v,getLayoutPosition());
+                        itemClickListener.onItemClickListener(v,getLayoutPosition(),datas);
                     }
                 }
             });
@@ -82,7 +82,7 @@ public class SynthesizeAdapter extends RecyclerView.Adapter<SynthesizeAdapter.Vi
      * 点击item的监听
      */
     public interface OnItemClickListener {
-        void onItemClickListener(View view, int position);
+        void onItemClickListener(View view, int position, List<SynthesizeBean.DataBean> datas);
     }
 
     /**

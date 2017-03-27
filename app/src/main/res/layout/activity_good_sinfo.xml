@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.hejian.bilibili.activity.GoodSInfoActivity">
+    tools:context="com.hejian.bilibili.activity.GoodsInfoActivity">
 
 
 
@@ -124,7 +124,7 @@
                                 android:id="@+id/tv_good_info_store"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="尚硅谷"
+                                android:text="商家"
                                 android:textColor="#ff4040" />
 
                             <TextView

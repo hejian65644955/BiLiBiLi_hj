@@ -1,12 +1,13 @@
 package com.hejian.bilibili.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by 何健 on 2017/3/23.
  */
 
-public class SynthesizeBean {
+public class SynthesizeBean implements Serializable {
 
     /**
      * code : 0
@@ -42,7 +43,7 @@ public class SynthesizeBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
          * title : 【Fate】最真实盾娘看了就出不来（请开启洗脑循环）
          * cover : http://i1.hdslb.com/bfs/archive/e14ae4f9e4fd4a9e20411c0d8621af7b348744c7.jpg
@@ -269,7 +270,7 @@ public class SynthesizeBean {
             this.dislike_reasons = dislike_reasons;
         }
 
-        public static class TagBean {
+        public static class TagBean implements Serializable{
             /**
              * tag_id : 1142319
              * tag_name : 舞蹈MMD
@@ -295,7 +296,7 @@ public class SynthesizeBean {
             }
         }
 
-        public static class DislikeReasonsBean {
+        public static class DislikeReasonsBean implements Serializable {
             /**
              * reason_id : 4
              * reason_name : UP主:Saber有C

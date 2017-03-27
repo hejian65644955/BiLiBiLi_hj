@@ -5,12 +5,14 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.hejian.bilibili.R;
+import com.hejian.bilibili.activity.GoodSInfoActivity;
 import com.hejian.bilibili.activity.TopicCenterActivity;
 import com.hejian.bilibili.bean.DiscoverBean;
 import com.hejian.bilibili.utils.Utils;
@@ -49,6 +51,10 @@ public class DiscoverFragment extends BaseFragment {
     TextView tvTopic;
     @InjectView(R.id.action_center)
     TextView actionCenter;
+    @InjectView(R.id.tv_shopping)
+    TextView tvShopping;
+    @InjectView(R.id.ic_quanzi_layout)
+    RelativeLayout icQuanziLayout;
     private boolean flag = false;
 
     @Override
@@ -169,7 +175,7 @@ public class DiscoverFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.action_center, R.id.topic_center_layout})
+    @OnClick({R.id.action_center, R.id.topic_center_layout, R.id.ic_quanzi_layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.topic_center_layout:
@@ -177,6 +183,10 @@ public class DiscoverFragment extends BaseFragment {
                 break;
             case R.id.action_center:
                 break;
+            case R.id.ic_quanzi_layout:
+                startActivity(new Intent(mContext, GoodSInfoActivity.class));
+                break;
         }
     }
+
 }

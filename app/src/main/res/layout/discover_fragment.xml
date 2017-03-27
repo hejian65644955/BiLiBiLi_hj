@@ -153,12 +153,13 @@
 
 
         <TextView
+            android:id="@+id/tv_shopping"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/ic_quanzi"
-            android:text="兴趣圈"
+            android:text="购物车"
             android:textColor="#555555"
             android:textSize="14sp" />
 

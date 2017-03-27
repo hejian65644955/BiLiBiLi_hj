@@ -6,7 +6,7 @@ import java.util.List;
  * Created by 何健 on 2017/3/22.
  */
 
-public class DrawBean {
+public class DrawBean  {
     /**
      * code : 0
      * message : ok

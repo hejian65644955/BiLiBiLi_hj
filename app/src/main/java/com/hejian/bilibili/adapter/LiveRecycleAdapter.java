@@ -1,6 +1,7 @@
 package com.hejian.bilibili.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,11 +10,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
 import com.hejian.bilibili.R;
+import com.hejian.bilibili.activity.PlayerActivity;
 import com.hejian.bilibili.bean.DrawBean;
 import com.hejian.bilibili.bean.HomeBean;
 import com.hejian.bilibili.utils.Utils;
@@ -39,6 +40,7 @@ public class LiveRecycleAdapter extends RecyclerView.Adapter {
     private static final int BANNER = 0;
 
     private static final int DRAW = 1;
+
     private final HomeBean datas;
     private final Context mContext;
     private int CurrentType = BANNER;
@@ -90,13 +92,19 @@ public class LiveRecycleAdapter extends RecyclerView.Adapter {
             this.mContext = mContext;
         }
 
-        public void setData(List<DrawBean.DataBean> data) {
+        public void setData(final List<DrawBean.DataBean> data) {
             adapter = new MyDrawGridViewAdapter(data, mContext);
             gvDraw.setAdapter(adapter);
+
+
             gvDraw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(mContext, "position=="+position, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(mContext, "position=="+position, Toast.LENGTH_SHORT).show();
+                   Intent intent = new Intent(mContext,PlayerActivity.class);
+                    intent.putExtra("position",position);
+                    //intent.putExtra("Bean",drawBean);
+                    mContext.startActivity(intent);
                 }
             });
         }

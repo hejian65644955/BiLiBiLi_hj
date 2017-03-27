@@ -134,6 +134,7 @@ public class LiveFragment extends BaseFragment {
                     return 1;
                 }
             });
+
         }
 
 
@@ -142,5 +143,7 @@ public class LiveFragment extends BaseFragment {
             super.onDestroyView();
             ButterKnife.reset(this);
         }
+
+
 
     }

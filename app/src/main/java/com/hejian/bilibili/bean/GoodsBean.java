@@ -65,6 +65,20 @@ public class GoodsBean {
         this.number = number;
     }
 
+
+    /**
+     * 是否选中
+     */
+    private boolean isChecked =true;
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
+
     public String getTitle() {
         return title;
     }

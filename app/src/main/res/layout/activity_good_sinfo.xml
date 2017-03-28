@@ -75,7 +75,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="350dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/new_user_icon_background" />
+                            android:src="@drawable/ic_group_header_bg" />
 
                         <TextView
                             android:id="@+id/tv_good_info_name"

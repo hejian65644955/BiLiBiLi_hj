@@ -25,13 +25,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anye.greendao.gen.UserDao;
 import com.bumptech.glide.Glide;
+import com.hejian.bilibili.MyApplication;
 import com.hejian.bilibili.R;
 import com.hejian.bilibili.bean.GoodsBean;
 import com.hejian.bilibili.bean.SynthesizeBean;
-import com.hejian.bilibili.utils.CartStorage;
+import com.hejian.bilibili.bean.User;
 import com.hejian.bilibili.utils.VirtualkeyboardHeight;
 import com.hejian.bilibili.view.AddSubView;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -82,9 +86,12 @@ public class GoodsInfoActivity extends AppCompatActivity {
     @InjectView(R.id.ll_root)
     LinearLayout llRoot;
     private GoodsBean goodsBean;
-    private GoodsBean tempGoodsBean;
     private boolean isExist;
     private int position;
+    private UserDao userDao;
+    private User mUser;
+    private GoodsBean tempGoodsBean = new GoodsBean();
+    ;
 
 
     @Override
@@ -92,25 +99,23 @@ public class GoodsInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_good_sinfo);
         ButterKnife.inject(this);
-
+        userDao = MyApplication.getInstances().getDaoSession().getUserDao();
         getData();
     }
 
     private void getData() {
         goodsBean = new GoodsBean();
         SynthesizeBean.DataBean dataBean = (SynthesizeBean.DataBean) getIntent().getSerializableExtra("datas");
-        if(dataBean!=null){
+        if (dataBean != null) {
             goodsBean.setFace(dataBean.getFace());
             goodsBean.setName(dataBean.getName());
             goodsBean.setCover(dataBean.getCover());
             goodsBean.setTid(dataBean.getTid());
-            position = getIntent().getIntExtra("position",-1);
-            if (goodsBean !=null && position !=-1) {
+            position = getIntent().getIntExtra("position", -1);
+            if (goodsBean != null && position != -1) {
                 setData();
             }
         }
-
-
     }
 
     private void setData() {
@@ -122,7 +127,7 @@ public class GoodsInfoActivity extends AppCompatActivity {
         tvGoodInfoName.setText(goodsBean.getName());
         tvGoodInfoPrice.setText("￥" + (position * 100 + 10));
         //设置加载页面
-        loadWeb("http://mp.weixin.qq.com/s/Cf3DrW2lnlb-w4wYaxOEZg");
+        loadWeb("http://app.bilibili.com/");
     }
 
     private void loadWeb(String url) {
@@ -179,7 +184,7 @@ public class GoodsInfoActivity extends AppCompatActivity {
                 Toast.makeText(GoodsInfoActivity.this, "收藏", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tv_good_info_cart:
-                intent = new Intent(GoodsInfoActivity.this,ShoppingCartActivity.class);
+                intent = new Intent(GoodsInfoActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_good_info_addcart:
@@ -187,9 +192,9 @@ public class GoodsInfoActivity extends AppCompatActivity {
                 break;
             case R.id.tv_more_share:
                 Toast.makeText(GoodsInfoActivity.this, "分享====", Toast.LENGTH_SHORT).show();
-                if(!TextUtils.isEmpty(goodsBean.getFace())){
+                if (!TextUtils.isEmpty(goodsBean.getFace())) {
                     Intent intent1 = new Intent(this, QRCodeActivity.class);
-                    intent1.putExtra("url_qr",goodsBean.getFace());
+                    intent1.putExtra("url_qr", goodsBean.getFace());
                     startActivity(intent1);
                 }
 
@@ -203,14 +208,28 @@ public class GoodsInfoActivity extends AppCompatActivity {
         }
     }
 
+    User oldUser = null;
+
     private void showPopwindow() {
-        tempGoodsBean = CartStorage.getInstance(this).findDete(goodsBean.getTid()+"");
-        if(tempGoodsBean !=null){
-            isExist=false;
-            tempGoodsBean =goodsBean;
-        }else {
-            isExist =true;
+        //从数据库查找
+        List<User> users = userDao.loadAll();
+        Log.e("TAG", "ccccccccccccccccccccccccccc" + users.size());
+        isExist = false;
+        for (int i = 0; i < users.size(); i++) {
+            oldUser = users.get(i);
+            if (oldUser.getTId() == goodsBean.getTid()) {
+                isExist = true;
+
+            }
         }
+        tempGoodsBean = goodsBean;
+        /*if (!isExist) {
+            tempGoodsBean.setName(goodsBean.getName());
+            tempGoodsBean.setCover(goodsBean.getCover());
+            tempGoodsBean.setNumber(goodsBean.getNumber());
+            tempGoodsBean.setTid(goodsBean.getTid());
+        }*/
+
 
         // 1 利用layoutInflater获得View
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -247,7 +266,7 @@ public class GoodsInfoActivity extends AppCompatActivity {
         // 名称
         tv_goodinfo_name.setText(goodsBean.getName());
         // 显示价格
-        tv_goodinfo_price.setText(position*100+10+"");
+        tv_goodinfo_price.setText(position * 100 + 10 + "");
 
         // 设置最大值和当前值
         nas_goodinfo_num.setMaxValue(100);//库存100
@@ -258,7 +277,7 @@ public class GoodsInfoActivity extends AppCompatActivity {
         nas_goodinfo_num.setOnNumberChangerListener(new AddSubView.OnNumberChangerListener() {
             @Override
             public void onNumberChanger(int value) {
-                goodsBean.setNumber(value);
+                tempGoodsBean.setNumber(value);
             }
         });
 
@@ -266,8 +285,8 @@ public class GoodsInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 window.dismiss();
-                if( goodsBean.getNumber()==1){
-                    goodsBean.setNumber(goodsBean.getNumber()+1);
+                if (!isExist && tempGoodsBean.getNumber() == 1) {
+                    tempGoodsBean.setNumber(tempGoodsBean.getNumber() + 1);
                 }
             }
         });
@@ -277,7 +296,26 @@ public class GoodsInfoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 window.dismiss();
                 //添加购物车
-                CartStorage.getInstance(GoodsInfoActivity.this).addData(goodsBean);
+                //CartStorage.getInstance(GoodsInfoActivity.this).addData(goodsBean);
+                //添加到数据库
+                int number = tempGoodsBean.getNumber();
+                String imageUrl = tempGoodsBean.getCover();
+                String name = tempGoodsBean.getName();
+                double price = position * 100 + 10;
+                double tId = tempGoodsBean.getTid();
+//                Log.e("TAG", "user1111111111111111111111112222222111111" + user.getName());
+                if (isExist) {
+                    oldUser.setNum(number);
+                    oldUser.setName(name);
+                    oldUser.setPrice(price);
+                    oldUser.setTId(tId);
+                    oldUser.setImageUrl(imageUrl);
+                    userDao.update(oldUser);
+                } else {
+                    User user = new User(null, number, imageUrl, name, price, tId);
+                    userDao.insert(user);
+                }
+
 
                 Log.e("TAG", "66:" + goodsBean.toString());
                 Toast.makeText(GoodsInfoActivity.this, "添加购物车成功", Toast.LENGTH_SHORT).show();
@@ -297,5 +335,5 @@ public class GoodsInfoActivity extends AppCompatActivity {
                 Gravity.BOTTOM, 0, VirtualkeyboardHeight.getBottomStatusHeight(GoodsInfoActivity.this));
 
     }
-    }
+}
 

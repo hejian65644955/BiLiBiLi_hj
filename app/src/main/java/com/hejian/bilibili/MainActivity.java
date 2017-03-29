@@ -25,6 +25,8 @@ import com.hejian.bilibili.fragment.PartitionFragment;
 import com.hejian.bilibili.fragment.RecommendFragment;
 import com.hejian.bilibili.fragment.ToThemFragment;
 import com.hejian.bilibili.headactivity.MemberActivity;
+import com.wyt.searchbox.SearchFragment;
+import com.wyt.searchbox.custom.IOnSearchClickListener;
 import com.xys.libzxing.zxing.activity.CaptureActivity;
 
 import java.util.ArrayList;
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity
     LinearLayout llClick;
     @InjectView(R.id.iv_saosao)
     ImageView ivSaosao;
+    @InjectView(R.id.iv_search)
+    ImageView ivSearch;
     private List<BaseFragment> fragments;
     private boolean isOpen = true;
 
@@ -80,6 +84,22 @@ public class MainActivity extends AppCompatActivity
                 startActivityForResult(openCameraIntent, 0);
             }
         });
+
+        ivSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SearchFragment searchFragment = SearchFragment.newInstance();
+                searchFragment.setOnSearchClickListener(new IOnSearchClickListener() {
+                    @Override
+                    public void OnSearchClick(String keyword) {
+                        Toast.makeText(MainActivity.this, keyword, Toast.LENGTH_SHORT).show();
+                    }
+                });
+                searchFragment.show(getSupportFragmentManager(),SearchFragment.TAG);
+            }
+        });
+
+
         initData();
     }
 
@@ -91,7 +111,7 @@ public class MainActivity extends AppCompatActivity
 
         //关联ViewPager
         tablayout.setupWithViewPager(viewPager);
-        tablayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        tablayout.setTabMode(TabLayout.MODE_FIXED);
         tablayout.setTabsFromPagerAdapter(adapter);
     }
 
@@ -176,10 +196,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 0 && resultCode ==RESULT_OK){
+        if (requestCode == 0 && resultCode == RESULT_OK) {
             //String result = data.getExtras().getString("result");
-            Toast.makeText(MainActivity.this, ""+"未实现", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(MainActivity.this, "" + "未实现", Toast.LENGTH_SHORT).show();
         }
     }
 

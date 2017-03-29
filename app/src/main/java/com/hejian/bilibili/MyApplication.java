@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import com.anye.greendao.gen.DaoMaster;
 import com.anye.greendao.gen.DaoSession;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * Created by 何健 on 2017/3/28.
  */
@@ -17,10 +19,16 @@ public class MyApplication extends Application {
     private DaoMaster mDaoMaster;
     private DaoSession mDaoSession;
     public static MyApplication instances;
-    @Override    public void onCreate() {
+    @Override
+    public void onCreate() {
         super.onCreate();
+
+        JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
+        JPushInterface.init(this);     		// 初始化 JPush
+
         instances = this;
         setDatabase();
+
     }
     public static MyApplication getInstances(){
         return instances;

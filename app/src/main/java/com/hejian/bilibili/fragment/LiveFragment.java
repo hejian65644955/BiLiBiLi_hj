@@ -137,13 +137,9 @@ public class LiveFragment extends BaseFragment {
 
         }
 
-
         @Override
         public void onDestroyView() {
             super.onDestroyView();
             ButterKnife.reset(this);
         }
-
-
-
     }

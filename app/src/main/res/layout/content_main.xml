@@ -11,13 +11,14 @@
     tools:showIn="@layout/app_bar_main">
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fb7299"
-            android:orientation="horizontal">
+            >
 
             <LinearLayout
+                android:orientation="horizontal"
                 android:id="@+id/ll_click"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -48,39 +49,45 @@
 
             </LinearLayout>
 
-
             <ImageView
-                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
                 android:id="@+id/iv_saosao"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/scan"
                 android:tint="@android:color/white"/>
 
-
             <ImageView
-                android:layout_marginLeft="20dp"
-                android:id="@+id/iv_game"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/iv_saosao"
+                android:id="@+id/iv_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:src="@drawable/ic_menu_top_game_center" />
+                android:src="@drawable/live_home_search" />
 
             <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/iv_search"
                 android:id="@+id/iv_download"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:src="@drawable/ic_toolbar_menu_download" />
 
+
             <ImageView
-                android:id="@+id/iv_search"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/iv_download"
+                android:id="@+id/iv_game"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
                 android:padding="10dp"
-                android:src="@drawable/live_home_search" />
-        </LinearLayout>
+                android:src="@drawable/ic_menu_top_game_center" />
+
+        </RelativeLayout>
 
 
     <android.support.design.widget.TabLayout

@@ -76,6 +76,9 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-Favorite-2.8.0.jar')
     compile files('libs/ShareSDK-Wechat-Moments-2.8.0.jar')
     compile files('libs/alipaySdk-20160809.jar')
-    compile'org.greenrobot:greendao:3.0.1'
-    compile'org.greenrobot:greendao-generator:3.0.0'
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao-generator:3.0.0'
+    compile 'com.wenwenwen888:searchbox:1.0.0'
+    compile files('libs/jcore-android_v1.1.1.jar')
+    compile files('libs/jpush-android_v3.0.3.jar')
 }
